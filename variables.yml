@@ -22,3 +22,15 @@
         msg: url - {{ url }}
       vars:
         url: tasks.example.com
+
+- name: Variable Data types
+  hosts: localhost
+  connection: local
+  vars:
+    x: abc
+    y: 100 # we can also use float values like 1.20001
+    z: true
+  tasks:
+    - name: Print url
+      ansible.builtin.debug:
+        msg: x - {{ x }} , y - {{ y }}, z - {{ z }}
